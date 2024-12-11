@@ -1,15 +1,18 @@
 import telebot
 import requests
 import time
+import os
+from dotenv import load_dotenv, dotenv_values
+
+load_dotenv()
 
 # Token do seu bot no Telegram
-TOKEN = '5047466592:AAFsw00a1QBDP1i7v8W5dw2o1LKSi0EFdWo'
-
+TOKEN = os.getenv("TOKEN")
 # ID do chat para onde serão enviadas as notificações
-CHAT_ID = '571724768'
+CHAT_ID = os.getenv("CHAT_ID")
 
 # URL da API para obter a cotação do dólar em relação ao Real
-API_URL = 'https://open.er-api.com/v6/latest/USD'
+API_URL = os.getenv('API_URL')
 
 # Valor de referência para notificar quando o dólar baixar
 VALOR_REFERENCIA = 5.0  # Substitua pelo valor desejado
